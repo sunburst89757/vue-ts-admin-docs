@@ -20,5 +20,6 @@ module.exports = {
             }
           ]
       },
-    base: "/vue3-ts-admin/"
+    base: "/vue-ts-admin-docs/",
+    dest: "public"
   }

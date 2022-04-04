@@ -1,0 +1,19 @@
+# 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
+
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: vuepress-deploy
+        uses: jenkey2011/vuepress-deploy@master
+        env:
+          ACCESS_TOKEN: ${{ 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 }}
+          TARGET_REPO: sunburst89757/vue-ts-admin-docs
+          TARGET_BRANCH: master
+          BUILD_SCRIPT: yarn && yarn build
+          BUILD_DIR: blog/.vuepress/dist/

@@ -1,5 +1,5 @@
 ---
-navbar: false
+sidebar: false
 ---
 
 ## vue3-ts-admin
