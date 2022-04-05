@@ -1,8 +1,8 @@
 ---
-sidebar: false
+sidebarDepth: 0
 ---
 
-## vue3-ts-admin
+## vue-ts-admin
 
 这是一个利用 vue3 + typescript 实现的 Web 后台管理系统模板
 
