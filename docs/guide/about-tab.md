@@ -139,19 +139,11 @@ tabs 的所有数据存储在 tabStore 里，主要就是 tabs tabsActive menuAc
    				const route = useRoute();
    				const tabsStore = useTabStore();
    				const { cacheComponents } = storeToRefs(tabsStore);
-   				watch(route, () => {
-   				  // 这里路由跳转会响应两次原因暂时未知
-   				  console.log("监听route", route);
-   				  tabsStore.handleTab(route);
-   				});
    ```
 
-2. 操作 Tab:只要在页面整体布局的组件 layout 下监听 route 就触发操作 tab。（点击菜单引起的）
+2. 操作 Tab:Tab 的数据全部存储在 store/tabStore 下
 
-   1. 例外情况：
-      1. 退出登录的时候，路由会出现/login,这是不能存放在 tab 里，所以要单独处理判断
-
-   b. 监听路由的变化只会出现是否新增 tab 的操作，关于 tab 的所有状态和存储全部放在 store 里进行管理，已经存在于 tab 的就不在新增，存在就新增。
+   - handleTab: 将路由拦截的路由对象 to 传递过来判断即可，判断是否是新增还是跳转即可。
 
 3. 删除 tab
    1. 删除后，选中的路由应该是上一个 tab 对应的路由路径
